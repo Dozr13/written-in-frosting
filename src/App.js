@@ -1,12 +1,22 @@
 import React from 'react';
-import './App.css';
+import ViewProvider from './Context/ViewCtx'
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
+import routes from './routes'
+
+import {withRouter} from 'react-router-dom'
+
+import './App.scss';
+
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <ViewProvider>
+      <Header />
+        {routes}
+      <Footer />
+    </ViewProvider>
   );
 }
 
-export default App;
+export default withRouter(App);
