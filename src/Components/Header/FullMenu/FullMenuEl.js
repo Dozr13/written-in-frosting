@@ -7,12 +7,12 @@ export const Nav = styled.nav`
   background: wheat;
   position: fixed;
   top: 0;
-  height: '10vh';
+  /* height: '10vh'; */
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   font-size: 1.3rem;
-  margin: 0 0 0 0;
-  padding: 1rem;
+  margin: 0;
+  padding: .8rem;
   z-index: 100;
 `
 
@@ -45,14 +45,13 @@ export const Bars = styled(FaBars)`
 `
 
 export const NavMenu = styled.ul`
+  width: 80%;
   display: flex;
+  justify-content: space-around;
   align-items: center;
   background: #d1cfcf;
-  /* margin-right: -24px; */
-  padding: 0 3rem 0 1rem;
-  /* border-top-left-radius: 50px; */
-  /* border-bottom-left-radius: 50px; */
-  /* box-shadow: 3px 1px 3px 1px #000; */
+  border-radius: 50px;
+  box-shadow: 2px 1px 1px 1px #000;
 
   @media screen and (max-width: 1200px) {
     display: none;
