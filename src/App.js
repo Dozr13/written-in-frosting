@@ -1,6 +1,6 @@
 import React from 'react';
 import ViewProvider from './Context/ViewCtx'
-import Header from './Components/Header/Header';
+import Nav from './Components/Header/Nav/NavBar'
 import Footer from './Components/Footer/Footer';
 import routes from './routes'
 
@@ -11,8 +11,9 @@ import './App.scss';
 
 function App() {
   return (
-    <ViewProvider>
-      <Header />
+    <ViewProvider id='screen'>
+      {/* <Header /> */}
+      <Nav />
         {routes}
       <Footer />
     </ViewProvider>

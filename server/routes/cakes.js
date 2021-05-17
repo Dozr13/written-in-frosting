@@ -15,7 +15,7 @@ router.route('/add').post((req, res) => {
   const price = Number(req.body.price);
   const imgUrl = req.body.imgUrl;
 
-  const newProperty = new Cake({
+  const newCake = new Cake({
     name,
     flavor,
     color,
@@ -24,7 +24,7 @@ router.route('/add').post((req, res) => {
     imgUrl,
   });
 
-  newProperty.save()
+  newCake.save()
     .then(() => res.json('New Cake has been added!'))
     .catch(err => req.status(400).json(`Error: ${err}`));
 });
