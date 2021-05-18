@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {HashRouter, BrowserRouter} from 'react-router-dom';
 import App from './App';
+import { CakeProvider } from './Context/CakeCtx';
 import './index.scss';
 
 const Router = 
@@ -10,7 +11,9 @@ const Router =
 
 ReactDOM.render(
   <Router>
-    <App />
+    <CakeProvider>
+      <App />
+    </CakeProvider>
   </Router>,
   document.getElementById('root')
 );

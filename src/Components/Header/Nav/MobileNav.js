@@ -19,7 +19,8 @@ const LinksWrapper = styled.ul`
   display: flex;
   justify-content: space-evenly;
   list-style: none;
-  background-color: #111;
+  background-color: #1e1e1e;
+  opacity: 90%;
   flex-direction: column;
   padding: 0;
   margin: 0;

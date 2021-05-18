@@ -6,6 +6,7 @@ import MobileNav from './MobileNav';
 import {ScreenSize} from '../../responsive/index';
 import {useMediaQuery} from 'react-responsive';
 
+
 const NavContainer = styled.div`
   width: 100%;
   height: 38vh;

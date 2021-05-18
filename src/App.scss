@@ -1,3 +1,8 @@
+@import 'variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+// * font-family: 'Dancing Script', cursive;
+
 
 
 *{
@@ -8,7 +13,23 @@
 }
 
 
-#screen{
-  height: 100%;
-  width: 100vw;
+
+#page{
+  height: 100vh;
+  width: 100%;
+  // text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: $page-background-color;
+
+}
+
+.title{
+  width: fit-content;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: $font-main;
+  border-bottom: 2px solid $font-secondary;
+  padding: 3rem 0 0 0;
 }

@@ -11,11 +11,10 @@ import './App.scss';
 
 function App() {
   return (
-    <ViewProvider id='screen'>
-      {/* <Header /> */}
-      <Nav />
-        {routes}
-      <Footer />
+    <ViewProvider>
+        <Nav />
+          {routes}
+        <Footer />
     </ViewProvider>
   );
 }
