@@ -21,7 +21,7 @@ html{
 
 #page{
   height: 100%;
-  width: 100%;
+  width: 110%;
   // text-align: center;
   display: flex;
   justify-content: center;
@@ -35,6 +35,7 @@ html{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .title{
@@ -44,6 +45,7 @@ html{
   color: $font-main;
   border-bottom: 2px solid $font-secondary;
   padding: 2rem 0 0 0;
+  margin: 0 auto;
 }
 
 .carousel-container{
@@ -55,5 +57,11 @@ html{
 
 .cake-carousel{
   // !!!!!!!!!!!!!!! need to figure out sizing adjustments
-  width: 25%;
+  width: 85%;
+}
+
+.c-img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
