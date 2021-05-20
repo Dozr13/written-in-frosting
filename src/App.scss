@@ -21,7 +21,7 @@ html{
 
 #page{
   height: 100%;
-  width: 110%;
+  width: 100%;
   // text-align: center;
   display: flex;
   justify-content: center;
@@ -49,7 +49,7 @@ html{
 }
 
 .carousel-container{
-  width: 100vw;
+  width: 40%;
   display: flex;
   justify-content: center;
   padding: 3rem 0;
@@ -61,7 +61,7 @@ html{
 }
 
 .c-img{
-  height: 100%;
+  max-height: 70%;
   width: 100%;
-  object-fit: contain;
+  // object-fit: contain;
 }
