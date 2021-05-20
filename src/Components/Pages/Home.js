@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import Drop from '../Admin/Drop';
 import CakeCarousel from '../Carousel/CakeCarousel';
 
 function Home() {
@@ -14,6 +15,9 @@ function Home() {
             <CakeCarousel />
           </section>
         </div>
+      </section>
+      <section className='home-body'>
+        {/* <Drop /> */}
       </section>
     </div>
   )

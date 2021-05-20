@@ -14,7 +14,7 @@ export const CakeProvider = (props) => {
   //   }).catch(error => console.log(error))
   // }
 
-  const readOrders = () => {
+  const readCakes = () => {
     axios.get('http://localhost:3013/cakes/').then(({data}) => {
       console.log(data)
       setCakes(data)
@@ -36,7 +36,7 @@ export const CakeProvider = (props) => {
 
 
   return (
-    <CakeContext.Provider value={{cakes, readOrders}}>
+    <CakeContext.Provider value={{cakes, readCakes}}>
       {props.children}
     </CakeContext.Provider>
   )

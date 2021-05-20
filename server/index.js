@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require("express");
 const cors = require('cors');
 const mongoose = require('mongoose')
+const aws = require('aws-sdk');
 
 const {SERVER_PORT, MONGODB_URI} = process.env
 
@@ -19,13 +20,70 @@ connection.once('open', () => {
   console.log('MongoDB connection established successfully');
 });
 
+
+
+
+// s3
+const {
+  S3_BUCKET,
+  AWS_ACCESS_KEY_ID,
+  AWS_SECRET_ACCESS_KEY,
+  AWS_REGION
+} = process.env
+
+app.get('/sign-s3', (req, res) => {
+
+aws.config = {
+  region: AWS_REGION,
+  accessKeyId: AWS_ACCESS_KEY_ID,
+  secretAccessKey: AWS_SECRET_ACCESS_KEY
+}
+
+
+const s3 = new aws.S3();
+const fileName = req.query['file-name'];
+const fileType = req.query['file-type'];
+const s3Params = {
+  Bucket: S3_BUCKET,
+  Key: fileName,
+  Expires: 60,
+  ContentType: fileType,
+  ACL: 'public-read'
+};
+
+s3.getSignedUrl('putObject', s3Params, (err, data) => {
+  if(err){
+    console.log(err);
+    return res.end();
+  }
+  const returnData = {
+    signedRequest: data,
+    url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
+  };
+
+  return res.send(returnData)
+});
+});
+
+
+
+
+
+
+
 app.get('/ping', (req, res) => {
   res.send('pong')
 });
 
+
+
+
 const cakesRouter = require('./routes/cakes');
 
+
 app.use('/cakes', cakesRouter);
+
+
 
 app.listen(SERVER_PORT, () => console.log(`Server listening on port: ${SERVER_PORT}`));
 
